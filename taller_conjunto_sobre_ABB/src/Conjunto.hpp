@@ -4,8 +4,10 @@ template <class T>
 Conjunto<T>::Conjunto() : _raiz(nullptr), _longitud(0) {};
 
 template <class T>
-Conjunto<T>::~Conjunto() { 
-    // Completar
+Conjunto<T>::~Conjunto() {
+    while(_longitud > 0){
+        remover(minimo());
+    }
 }
 
 template <class T>
@@ -76,10 +78,11 @@ void Conjunto<T>::remover(const T& clave) {
             suc = suc->izq;
         }
         n->valor = suc->valor;
-        if (suc->padre == n){
-            (suc->der)? suc->padre->der = suc->der : suc->padre->der = NULL;
+        if (suc->der) {
+            suc->der->padre = suc->padre;
+            (suc->padre == n)? suc->padre->der = suc->der : suc->padre->izq = suc->der;
         } else {
-            (suc->der)? suc->padre->izq = suc->der : suc->padre->izq = NULL;
+            (suc->padre == n)? suc->padre->der = NULL : suc->padre->izq = NULL;
         }
         n = suc;
     } else {
