@@ -1,0 +1,7 @@
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/correrValgrind.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/correrTests_ext.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/correrTests.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/gtest_main.dir
+/Users/juaniponce/github/AED2-C1-2021/Laboratorio/ejercitacion-trie/ejercitacion-trie/cmake-build-debug/CMakeFiles/gtest.dir
