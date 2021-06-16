@@ -9,8 +9,8 @@ string_map<T>& string_map<T>::operator=(const string_map<T>& d) {
     for (string clave: claves) {
         erase(clave);
     }
-    for (string clave: d.claves) {
-        this->insert(make_pair(clave, at(clave)));
+    for (const string& clave: d.claves) {
+        this->insert(make_pair(clave, d.at(clave)));
     }
 }
 
@@ -83,20 +83,23 @@ T& string_map<T>::at(const string& clave) {
 template <typename T>
 void string_map<T>::erase(const string& clave) {
     Nodo* actual = raiz;
-    Nodo* ultimo = raiz;
+    Nodo* ultimo = actual;
     int itr = 0;
     for (int i = 0; i < clave.size(); i++) {
-        if (actual->definicion) ultimo = actual, itr = i;
-        actual = actual->siguientes[clave[i]];
+        if (actual->definicion || actual->haySiguientes(int(clave[i]))) {
+            ultimo = actual;
+            itr = i;
+        }
+        actual = actual->siguientes[int(clave[i])];
     }
     delete actual->definicion;
-    claves.erase(clave);
+    actual->definicion = NULL;
 //    if (!actual->haySiguientes()) {
-//        for (int j = clave.size()-1; j > itr; j--) {
-//            ac
+//        for (int j = itr; j < clave.size(); j++) {
+//            delete ultimo->siguientes[int(clave[j])];
 //        }
 //    }
-
+    claves.erase(clave);
 }
 
 template <typename T>

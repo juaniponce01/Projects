@@ -85,6 +85,15 @@ private:
         T* definicion;
         Nodo() : siguientes(256, nullptr), definicion(nullptr) {}
         Nodo(T* def) : siguientes(256, nullptr), definicion(def) {}
+        bool haySiguientes(int i) {
+            bool res = false;
+            int inc = 0;
+            for (Nodo* siguiente: siguientes) {
+                if (siguiente && inc != i) res = true;
+                inc++;
+            }
+            return res;
+        }
         bool haySiguientes() {
             bool res = false;
             for (Nodo* siguiente: siguientes) {
