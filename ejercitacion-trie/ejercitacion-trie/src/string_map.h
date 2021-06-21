@@ -78,6 +78,7 @@ public:
     **/
     T &operator[](const string &key);
 
+
 private:
 
     struct Nodo {
@@ -100,6 +101,15 @@ private:
                 if (siguiente) res = true;
             }
             return res;
+        }
+
+        void destruirNodos(Nodo* nodo){
+            if (nodo){
+                for (int i = 0; i < nodo->siguientes.size(); ++i) {
+                    if (nodo->siguientes[i] != nullptr) destruirNodos(nodo->siguientes[i]);
+                    delete nodo;
+                }
+            }
         }
     };
     set<string> claves;

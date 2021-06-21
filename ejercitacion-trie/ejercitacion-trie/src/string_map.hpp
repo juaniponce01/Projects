@@ -16,7 +16,8 @@ string_map<T>& string_map<T>::operator=(const string_map<T>& d) {
 
 template <typename T>
 string_map<T>::~string_map(){
-    // COMPLETAR
+    raiz->destruirNodos(raiz);
+
 }
 
 template <typename T>
